@@ -1,0 +1,34 @@
+{
+  "name": "GenTemplate",
+  "version": "0.9.0",
+  "description": "General Template",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/archana-s/SimpleWebAppBoilerPlate.git"
+  },
+  "author": "Archana-Sankaranarayanan",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-express-server": "~0.4.11",
+    "express": "~3.4.0",
+    "hbs": "*",
+    "jquery": "~2.1.0-rc1",
+    "grunt-autoprefixer": "~0.6.5"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "hbs": "*",
+    "jquery": "~2.1.0-rc1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "subdomain": "gentemplate",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,188 @@
+@import "colors";
+@import "fonts";
+@import "mixins";
+@import "icon";
+@import "normalize";
+
+$displayImageBorder: 15;
+$imgSize: 500;
+$displayImageSize: $displayImageBorder*2 + $imgSize;
+
+body {
+  background-color: black;
+  color: $dimYellow;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+
+  .header {
+    left: 45px;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+
+    .icon {
+      position: absolute;
+      left: 10px;
+    }
+
+    .title {
+      position: absolute;
+      left: 60px;
+    }
+  }
+
+  .contents {
+    height: 1000px;
+    margin: 25px auto;
+  }
+
+  .img-container {
+
+    width: 800px;
+    height: 600px;
+
+    .display-image {
+      z-index: 10;
+      width: $displayImageSize+px;
+      height: $displayImageSize+px;
+      margin: auto;
+      position:relative;
+      overflow:hidden;
+
+      img {
+        width: $imgSize+px;
+        height: $imgSize+px;
+        padding: $displayImageBorder+px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .masks {
+
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 1500px;
+
+    img, .full-view {
+      width: 500px;
+      height: 500px;
+      border-radius: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .full-view {
+
+      .mask1 {
+        position: absolute;
+        border-left: 252px solid black;
+        border-right: 252px solid transparent;
+        border-bottom: 252px solid black;
+        border-top: 252px solid transparent;
+      }
+
+      .mask2 {
+        position: absolute;
+        border-left: 125px solid transparent;
+        border-right: 125px solid black;
+        border-bottom: 125px solid transparent;
+        border-top: 125px solid black;
+      }
+
+      .mask3 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-right: 252px solid black;
+        border-left: 252px solid transparent;
+        border-bottom: 252px solid black;
+        border-top: 252px solid transparent;
+      }
+    }
+  }
+
+  .scope-view {
+    width: 575px;
+    height: 575px;
+
+    .cover {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .kaleiscope-gradient {
+
+        background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 52%, rgba(0,0,0,1) 62%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0)), color-stop(52%,rgba(0,0,0,0.7)), color-stop(62%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,1) 62%,rgba(0,0,0,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+        width: 575px;
+        height: 575px;
+        display: none;
+      }
+
+      .kaleiscope {
+        width: 500px;
+        height: 500px;
+
+        .img-canvas {
+          width: 500px;
+          height: 500px;
+          position: relative;
+
+          canvas {
+            position: absolute;
+            top: 0;
+            left: 240px;
+            border-top-right-radius: 100%;
+            backface-visibility: visible;
+
+          }
+
+          canvas:first-child {
+            transform: translate(5px, 5px);
+            -webkit-transform: translate(5px, 5px);
+          }
+        }
+      }
+
+    }
+  }
+
+
+  .work-area {
+    display: none;
+
+    .canvas-elem {
+      canvas {
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .content-box {
+    border-radius: 5px;
+    top: 30px;
+    padding: 25px 40px;
+  }
+
+  .action-tab {
+    display: none;
+    background-color: grey;
+    position: absolute;
+    left: 10px;
+    top: 200px;
+  }
+}
