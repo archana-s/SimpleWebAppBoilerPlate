@@ -1,0 +1,47 @@
+.horz-align {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vert-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin horz-flexbox($position, $vert-align) {
+  display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+  display: -moz-box;      /* OLD: Firefox (buggy) */
+  display: -ms-flexbox;   /* MID: IE 10 */
+  display: -webkit-flex;  /* NEW, Chrome 21+ */
+  display: flex;          /* NEW: Opera 12.1, Firefox 22+ */
+
+  -webkit-box-pack: $position;
+  -moz-box-pack: $position;
+  -ms-flex-pack: $position;
+  -webkit-justify-content: $position;
+  justify-content: $position;
+
+  flex-direction: row;
+  -webkit-flex-direction: row;
+
+  /* vertical align */
+  -webkit-box-align: $vert-align;
+  -moz-box-align: $vert-align;
+  -ms-flex-align: $vert-align;
+  -webkit-align-items: $vert-align;
+  align-items: $vert-align;
+}
+
+
+.horz-flexbox-middle {
+  @include horz-flexbox(center, center);
+}
