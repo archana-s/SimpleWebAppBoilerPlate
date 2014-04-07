@@ -81,6 +81,16 @@
   align-items: center;
 }
 
+.page-bottom-fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+.page-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -506,4 +516,10 @@ body .contents section:first-child {
 }
 body .contents section:nth-child(2) {
   padding-bottom: 10px;
+}
+body .footer {
+  background-color: #f0f0f0;
+  height: 20px;
+  width: 100%;
+  text-align: center;
 }

@@ -45,3 +45,13 @@
 .horz-flexbox-middle {
   @include horz-flexbox(center, center);
 }
+
+.page-bottom-fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+.page-bottom {
+  position: absolute;
+  bottom: 0;
+}

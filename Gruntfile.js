@@ -31,6 +31,13 @@ module.exports = function(grunt) {
         }
       },
 
+      livereload: {
+        options: {
+          livereload: true
+        },
+        files: ['./public/styles/*.scss'],
+      },
+
       express: {
         files:  [ './public/scripts/*.js', './public/scripts/model/*.js', './public/scripts/view/*.js', './public/scripts/controller/*.js', './public/scripts/router/*.js' ],
         tasks:  [ 'express:dev' ],
