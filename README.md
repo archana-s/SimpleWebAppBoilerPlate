@@ -1,4 +1,4 @@
-# Simple Template for building a web app using Backbone/Marionette and Node/Express
+## Template for web app using Backbone and Node/Express
 
 ## Tech/Libraries in here
 * Backbone with Marionette for MVC structure
